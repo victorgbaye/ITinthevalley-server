@@ -20,9 +20,9 @@ app.get('/hello', (req, res)=>{
     res.send('IT in the valley server')
 })
 
-app.use('/api/v1/itinthevalley', IMagazineMgtRoutes)
-app.use('/api/v1/itinthevalley', IContributorMgt)
-app.use('/api/v1/itinthevalley', IAdvertMgt)
+app.use('/api', IMagazineMgtRoutes)
+app.use('/api', IContributorMgt)
+app.use('/api', IAdvertMgt)
 
 
 const port = process.env.PORT || 5000;
