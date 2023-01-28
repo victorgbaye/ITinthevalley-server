@@ -1,0 +1,369 @@
+openapi: 3.0.0
+info:
+  title: IT in The Valley
+  contact: {}
+  version: '1.0'
+servers:
+- url: https://it-in-the-valley.onrender.com/api
+  variables: {}
+paths:
+  /advert/{id}:
+    parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+        description: The advert ID
+    get:
+      tags:
+      - Misc
+      summary: Get Single Advert
+      operationId: GetSingleAdvert
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+  /advert:
+    post:
+      tags:
+      - Misc
+      summary: Submit Advert details
+      operationId: SubmitAdvertdetails
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/SubmitAdvertdetailsRequest'
+              - example:
+                  name: Tomiwa Gbaye
+                  email: tomiwizy1@gmail.com
+                  number: '07447475486'
+                  title: Election 2023
+                  advert: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et lorem ut ligula aliquet aliquet. Maecenas dapibus, urna at hendrerit sagittis, odio dolor fermentum enim, et pretium lectus mi sed est. Nunc nec blandit dui, eu porttitor felis. In fringilla purus sed orci efficitur, ut vulputate tellus vestibulum. Suspendisse vel elementum neque. Suspendisse quis diam arcu. Suspendisse sagittis diam a purus sagittis fringilla.
+                  picture:
+                    image: monalisaa
+                    description: picture of monalisa
+                    url: https://pyxis.nymag.com/v1/imgs/64c/289/6f0cb2dcc3fa6703a192ec75ae5cd283f7-smile-lede.rhorizontal.w700.jpg
+            example:
+              name: Tomiwa Gbaye
+              email: tomiwizy1@gmail.com
+              number: '07447475486'
+              title: Election 2023
+              advert: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et lorem ut ligula aliquet aliquet. Maecenas dapibus, urna at hendrerit sagittis, odio dolor fermentum enim, et pretium lectus mi sed est. Nunc nec blandit dui, eu porttitor felis. In fringilla purus sed orci efficitur, ut vulputate tellus vestibulum. Suspendisse vel elementum neque. Suspendisse quis diam arcu. Suspendisse sagittis diam a purus sagittis fringilla.
+              picture:
+                image: monalisaa
+                description: picture of monalisa
+                url: https://pyxis.nymag.com/v1/imgs/64c/289/6f0cb2dcc3fa6703a192ec75ae5cd283f7-smile-lede.rhorizontal.w700.jpg
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+    get:
+      tags:
+      - Misc
+      summary: Get All Adverts
+      operationId: GetAllAdverts
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+  /stories:
+    post:
+      tags:
+      - Misc
+      summary: Sumbit Story
+      operationId: SumbitStory
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/SumbitStoryRequest'
+              - example:
+                  author: wole soyinka
+                  email: wolesoyinka@gmail.com
+                  number: '2348107592847'
+                  title: the noble price
+                  story: Maecenas semper malesuada sapien ac blandit. Pellentesque cursus mauris quis enim blandit, blandit fringilla magna interdum. Proin pretium tortor metus, id ultrices risus rhoncus molestie. Donec et pellentesque neque, ut suscipit quam. Phasellus interdum ante in metus euismod dictum. Suspendisse accumsan dolor semper magna ultricies, eu vehicula justo aliquam. Integer pharetra euismod ornare. Sed aliquam augue quis metus convallis scelerisque. Phasellus ac ultrices lectus. Pellentesque id est pellentesque, mollis dui eget, euismod risus. Nullam eu lectus aliquet, condimentum ex nec, finibus tortor. Nam at vulputate erat, sit.
+            example:
+              author: wole soyinka
+              email: wolesoyinka@gmail.com
+              number: '2348107592847'
+              title: the noble price
+              story: Maecenas semper malesuada sapien ac blandit. Pellentesque cursus mauris quis enim blandit, blandit fringilla magna interdum. Proin pretium tortor metus, id ultrices risus rhoncus molestie. Donec et pellentesque neque, ut suscipit quam. Phasellus interdum ante in metus euismod dictum. Suspendisse accumsan dolor semper magna ultricies, eu vehicula justo aliquam. Integer pharetra euismod ornare. Sed aliquam augue quis metus convallis scelerisque. Phasellus ac ultrices lectus. Pellentesque id est pellentesque, mollis dui eget, euismod risus. Nullam eu lectus aliquet, condimentum ex nec, finibus tortor. Nam at vulputate erat, sit.
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+    get:
+      tags:
+      - Misc
+      summary: Get All Stories
+      operationId: GetAllStories
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+  /advert/edit-advert-details:
+    patch:
+      tags:
+      - Misc
+      summary: Edit Advert
+      operationId: EditAdvert
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+  /stories/{id}:
+    parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+        description: The story ID
+    get:
+      tags:
+      - Misc
+      summary: Get Single Story
+      operationId: GetSingleStory
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+  /stories/edit-story/{id}:
+    parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+        description: The story ID
+    patch:
+      tags:
+      - Misc
+      summary: Edit Story
+      operationId: EditStory
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/EditStoryRequest'
+              - example:
+                  author: chinua achebe
+                  email: chinuaachebe1@gmail.com
+                  number: '2348107592847'
+                  title: things fall apart
+                  story: Maecenas semper malesuada sapien ac blandit. Pellentesque cursus mauris quis enim blandit, blandit fringilla magna interdum. Proin pretium tortor metus, id ultrices risus rhoncus molestie. Donec et pellentesque neque, ut suscipit quam. Phasellus interdum ante in metus euismod dictum. Suspendisse accumsan dolor semper magna ultricies, eu vehicula justo aliquam. Integer pharetra euismod ornare. Sed aliquam augue quis metus convallis scelerisque. Phasellus ac ultrices lectus. Pellentesque id est pellentesque, mollis dui eget, euismod risus. Nullam eu lectus aliquet, condimentum ex nec, finibus tortor. Nam at vulputate erat, sit.
+            example:
+              author: chinua achebe
+              email: chinuaachebe1@gmail.com
+              number: '2348107592847'
+              title: things fall apart
+              story: Maecenas semper malesuada sapien ac blandit. Pellentesque cursus mauris quis enim blandit, blandit fringilla magna interdum. Proin pretium tortor metus, id ultrices risus rhoncus molestie. Donec et pellentesque neque, ut suscipit quam. Phasellus interdum ante in metus euismod dictum. Suspendisse accumsan dolor semper magna ultricies, eu vehicula justo aliquam. Integer pharetra euismod ornare. Sed aliquam augue quis metus convallis scelerisque. Phasellus ac ultrices lectus. Pellentesque id est pellentesque, mollis dui eget, euismod risus. Nullam eu lectus aliquet, condimentum ex nec, finibus tortor. Nam at vulputate erat, sit.
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+  /photograph:
+    get:
+      tags:
+      - Misc
+      summary: Get All Photographs
+      operationId: GetAllPhotographs
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+    post:
+      tags:
+      - Misc
+      summary: Submit Photograph
+      operationId: SubmitPhotograph
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/SubmitPhotographRequest'
+              - {}
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+  /photograph/{id}:
+    parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+        description: The photograph ID
+    get:
+      tags:
+      - Misc
+      summary: Get Single Photograph
+      operationId: GetSinglePhotograph
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+components:
+  schemas:
+    SubmitAdvertdetailsRequest:
+      title: SubmitAdvertdetailsRequest
+      required:
+      - name
+      - email
+      - number
+      - title
+      - advert
+      - picture
+      type: object
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+        number:
+          type: string
+        title:
+          type: string
+        advert:
+          type: string
+        picture:
+          allOf:
+          - $ref: '#/components/schemas/Picture'
+          - {}
+      example:
+        name: Tomiwa Gbaye
+        email: tomiwizy@gmail.com
+        number: '07447475486'
+        title: Election 2023
+        advert: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et lorem ut ligula aliquet aliquet. Maecenas dapibus, urna at hendrerit sagittis, odio dolor fermentum enim, et pretium lectus mi sed est. Nunc nec blandit dui, eu porttitor felis. In fringilla purus sed orci efficitur, ut vulputate tellus vestibulum. Suspendisse vel elementum neque. Suspendisse quis diam arcu. Suspendisse sagittis diam a purus sagittis fringilla.
+        picture:
+          image: monalisa
+          description: picture of monalisa
+    Picture:
+      title: Picture
+      required:
+      - image
+      - description
+      type: object
+      properties:
+        image:
+          type: string
+        description:
+          type: string
+      example:
+        image: monalisa
+        description: picture of monalisa
+    SumbitStoryRequest:
+      title: SumbitStoryRequest
+      required:
+      - title
+      type: object
+      properties:
+        title:
+          type: string
+      example:
+        title: things fall apart
+    EditStoryRequest:
+      title: EditStoryRequest
+      required:
+      - author
+      - email
+      - number
+      - title
+      - story
+      type: object
+      properties:
+        author:
+          type: string
+        email:
+          type: string
+        number:
+          type: string
+        title:
+          type: string
+        story:
+          type: string
+      example:
+        author: chinua achebe
+        email: chinuaachebe1@gmail.com
+        number: '2348107592847'
+        title: things fall apart
+        story: Maecenas semper malesuada sapien ac blandit. Pellentesque cursus mauris quis enim blandit, blandit fringilla magna interdum. Proin pretium tortor metus, id ultrices risus rhoncus molestie. Donec et pellentesque neque, ut suscipit quam. Phasellus interdum ante in metus euismod dictum. Suspendisse accumsan dolor semper magna ultricies, eu vehicula justo aliquam. Integer pharetra euismod ornare. Sed aliquam augue quis metus convallis scelerisque. Phasellus ac ultrices lectus. Pellentesque id est pellentesque, mollis dui eget, euismod risus. Nullam eu lectus aliquet, condimentum ex nec, finibus tortor. Nam at vulputate erat, sit.
+    SubmitPhotographRequest:
+      title: SubmitPhotographRequest
+      required:
+      - photographer
+      - email
+      - number
+      - title
+      - photo
+      type: object
+      properties:
+        photographer:
+          type: string
+        email:
+          type: string
+        number:
+          type: string
+        title:
+          type: string
+        photo:
+          type: string
+      example:
+        photographer: Tobi Bode
+        email: tobibode@gmail.com
+        number: '1234567890'
+        title: photo of jesus
+        photo: somethingfidhy
+tags:
+- name: Misc
+  description: ''
