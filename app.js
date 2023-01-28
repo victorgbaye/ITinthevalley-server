@@ -6,8 +6,14 @@ const IContributorMgt = require('./routes/IContributorMgt')
 const IAdvertMgt = require('./routes/IAdvertMgt')
 require('dotenv').config()
 
+
+
 //middleware
 app.use(express.json())
+
+app.get('/', (req, res) => {
+    res.send('<h1>IT In The Valley API</h1><a href="/api-docs">Documentation</a>');
+  });
 
 //routes
 app.get('/hello', (req, res)=>{
