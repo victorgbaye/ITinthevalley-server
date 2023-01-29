@@ -1,6 +1,7 @@
 const connectDB = require('./db/connect')
 const express = require('express');
 const app = express();
+const cors = require('cors');
 const IMagazineMgtRoutes = require('./routes/IMagazineMgt')
 const IContributorMgt = require('./routes/IContributorMgt')
 const IAdvertMgt = require('./routes/IAdvertMgt')
@@ -12,6 +13,8 @@ const YAML = require('yamljs');
 const swaggerDocument = YAML.load('./swagger.yaml');
 
 //middleware
+app.use(cors());
+
 app.use(express.json())
 
 
